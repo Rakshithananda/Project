@@ -1,0 +1,19 @@
+{% extends "home/base.html" %} 
+{% load static %} 
+{% load crispy_forms_tags %}
+{% block content %} 
+  <div class = "home-mainbody">
+    <div class="form-container"> 
+      <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="form-heading">Update to District Table</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock content %}

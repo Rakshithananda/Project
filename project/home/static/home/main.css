@@ -1,0 +1,366 @@
+.error {
+  margin: 20px;
+}
+.message {
+  position: absolute;
+}
+.loggedin {
+  margin : 20px auto;
+}
+
+.button-center {
+  margin: 50px auto;
+}
+
+.form-container {
+  margin: auto;
+  border: 3px solid #555;
+  padding: 40px;
+}
+
+.form-heading {
+  font-weight: bold;
+  padding: 10px;
+}
+
+.home-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.home-basecontainer {
+  top: 50px;
+  flex: 0 0 auto;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  max-width: auto;
+  min-width: auto;
+  max-height: auto;
+  min-height: auto;
+  align-items: flex-start;
+  padding-left: 250px;  
+  padding-right: 250px;
+  flex-direction: column;
+}
+.home-header {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  position: relative;
+  align-self: center;
+  box-shadow: 5px 5px 5px 0px #d4d4d4;
+  align-items: center;
+  border-radius: var(--dl-radius-radius-radius4);
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #6566dc;
+}
+.home-image {
+  right: 0px;
+  width: 100px;
+  bottom: 1px;
+  margin: 15px;
+  position: absolute;
+  align-self: flex-end;
+  object-fit: cover;
+}
+.home-image1 {
+  left: 12px;
+  width: 100px;
+  bottom: 15px;
+  position: absolute;
+  object-fit: cover;
+}
+.login-logout {
+  right: 0px;
+  width: 100px;
+  margin: 2px;
+  position: absolute;
+  align-self: flex-end;
+  object-fit: cover;
+}
+
+.home-text {
+  top: 25px;
+  left: 420px;
+  color: #ffffff;
+  position: absolute;
+  font-size: 25px;
+}
+.home-image2 {
+  width: 100px;
+  margin: 15px;
+  object-fit: cover;
+}
+.home-text05 {
+  top: 46px;
+  left: 780px;
+  color: #ffffff;
+  position: absolute;
+}
+.home-text06 {
+  font-style: normal;
+  font-weight: 800;
+}
+.home-text07 {
+  top: 64px;
+  left: 800px;
+  color: #ffffff;
+  position: absolute;
+}
+.home-mainbody {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  opacity: 1;
+  position: relative;
+  box-shadow: 5px 5px 5px 0px #d4d4d4;
+  align-items: flex-start;
+  border-radius: var(--dl-radius-radius-radius4);
+  flex-direction: column;
+  background-size: cover;
+  background-image: url('https://www.telugubulletin.com/wp-content/uploads/2019/11/ap-map.png');
+  background-position: 10px 10px 50px 10px;
+
+}
+.home-image3 {
+  top: 140px;
+  left: 140px;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  object-fit: cover;
+  border: 5px solid #555; 
+}
+
+
+.home-login {
+  flex: 0 0 auto;
+  width: 50%;
+  height: 680px;
+  display: flex;
+  position: relative;
+  align-self: flex-end;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 12px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+
+.home-login-form {
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-right: 40px;
+  top: 140px;
+  right: 172px;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  border: 3px solid #555;
+  font-size: 12px;
+  background-image: url('https://cutewallpaper.org/21/login-background/Login-ARLO-Group-Benefits.jpg') !important;
+}
+.home-register-form {
+  padding: 10px;
+  top: 20px;
+  right: 172px;
+  width: 400px;
+  height: 640px;
+  position: absolute;
+  border: 3px solid #555;
+  background-color: #dac8c8;
+  background-image: url('https://cutewallpaper.org/21/login-background/Login-ARLO-Group-Benefits.jpg') !important;
+}   
+.text-muted {
+  color: #333333 !important;
+  font-size: 10px !important;
+}
+
+.home-register{
+  flex: 0 0 auto;
+  width: 50%;
+  height: 680px;
+  font-size: 10px;
+}
+
+
+.home-logout {
+  flex: 0 0 auto;
+  width: 50%;
+  height: 680px;
+  justify-content: center;
+  align-self: flex-end;
+  font-size: 12px;
+  padding-top: 130px;
+  padding-left: 130px;
+  padding-right: 130px;
+  padding-bottom: 130px;
+
+}
+
+.login-button {
+  font-size: 25px;
+  align-self: stretch;
+  font-style: normal;
+  font-weight: 700;
+}
+.btn {
+  color: #333333 !important;
+}
+
+.home-contact {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  border-radius: var(--dl-radius-radius-radius4);
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #545454;
+}
+.home-text11 {
+  color: #ffffff;
+  font-size: 25px;
+  font-style: normal;
+  margin-top: 20px;
+  font-weight: 800;
+  margin-left: 140px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+.home-text12 {
+  font-size: 18px;
+  margin-top: 0px;
+  margin-left: 140px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.home-text13 {
+  color: #ffffff;
+}
+.home-text14 {
+  color: #ffffff;
+}
+.home-text15 {
+  color: #ffffff;
+}
+.home-text16 {
+  color: #ffffff;
+}
+.home-text17 {
+  color: #ffffff;
+}
+.home-text18 {
+  color: #ffffff;
+}
+.home-text19 {
+  position: absolute;
+  font-size: 25px;
+  align-self: flex-end;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 405px;
+  margin-bottom: 20px;
+}
+.home-text20 {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 800;
+  text-decoration: underline;
+}
+.home-text21 {
+  top: 0px;
+  color: #ffffff;
+  right: 0px;
+  position: absolute;
+  font-size: 18px;
+  align-self: flex-end;
+  margin-top: 70px;
+  margin-right: 300px;
+}
+.home-text22 {
+  font-style: normal;
+  font-weight: 500;
+}
+.home-text23 {
+  font-style: normal;
+  font-weight: 500;
+}
+.home-text24 {
+  font-style: normal;
+  font-weight: 500;
+}
+.home-text25 {
+  font-style: normal;
+  font-weight: 500;
+}
+.home-copyright {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  box-shadow: 5px 5px 5px 0px #d4d4d4;
+  align-items: flex-start;
+  border-radius: var(--dl-radius-radius-radius2);
+  background-color: #333333;
+}
+.home-text27 {
+  align-self: center;
+  margin-left: 140px;
+}
+.home-text28 {
+  color: #ffffff;
+}
+
+.bg-steel {
+  background-color: #545454;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+.bg-steel {
+  margin-left: 250px;
+  margin-right: 250px;
+  background-color: #555;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+.login-logout {
+  right: 10px;
+  width: 100px;
+  margin: 2px;
+  position: absolute;
+  align-self: flex-end;
+  object-fit: cover;
+}
+

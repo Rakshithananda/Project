@@ -1,0 +1,37 @@
+@login_required
+def Add_Revenue_Mandal(request):
+    if request.method == 'POST':
+        form = RevenueMandalForm(request.POST)
+        if form.is_valid():
+            print(form)
+            form.save()
+            messages.success(request, f'Your Data is Succesfully added!')
+            return redirect('show-revenue-dist')
+    else:
+        form = RevenueMandalForm()
+    return render(request,'home/add_table.html',{'form':form})
+
+@login_required
+def Show_Revenue_Mandal(request):
+    districts = Revenue_Mandal.objects.all()
+    return render(request,'home/show_revenue_dist.html',{'districts':districts})
+
+@login_required
+def Update_Revenue_Dist(request,id):
+    district = Revenue_Mandal.objects.get(id = id)
+    print(district)
+    if request.method == 'POST':
+        form = RevenueDistrictForm(request.POST, instance = district)
+        if form.is_valid():     
+            form.save()
+            messages.success(request, f'Data Updated Succesfully !')  
+            return redirect('show-revenue-dist')
+    else:
+        form = RevenueDistrictForm(instance = district)
+    return render(request, 'home/edit_table.html', {'form':form})
+
+@login_required
+def Delete_Revenue_Dist(request, id):  
+    district = Revenue_Mandal.objects.get(id = id)  
+    district.delete()  
+    return redirect('show-revenue-dist')

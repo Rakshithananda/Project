@@ -1,0 +1,33 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+  <div class = "home-mainbody">
+      <table class="table table-striped table-bordered table-sm">
+          <thead class="thead-dark">
+            <tr>
+              <th>District Code</th>
+              <th>District Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody> 
+            {% for district in districts %} <tr>
+              <td>{{ district.dist_code }}</td>
+              <td>{{ district.dist_name }}</td>
+              <td>
+                <a href="/update_revenue_dist/{{ district.id }}">
+                  <span class="glyphicon glyphicon-pencil">Edit</span>
+                </a>
+                <a href="/delete_revenue_dist/{{ district.id }}">Delete</a>
+              </td>
+            </tr> 
+            {% endfor %} 
+          </tbody>
+      </table>
+      <br>
+      <br>
+      <div class = "button-center">
+        <a href="/add_revenue_dist/" class="btn btn-primary">Add New Record</a>
+      </div>
+  </div>
+{% endblock content %}
