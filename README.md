@@ -53,7 +53,7 @@ Project is created with:
       * Install MySQL Server from [MySQL](https://dev.mysql.com/downloads/mysql/).
       * Install Postman from [Postman](https://www.postman.com/downloads/).
 
-    2. Download the zip and extract it.
+2. Download the zip and extract it.
 
 3. After Setting up your MySQL server, create a Database with name "dev_project" and Enter the user and Password of root user in project/settings.py
     
@@ -69,3 +69,5 @@ Project is created with:
       ```
       python manage.py runserver
       ```
+5. Go to http://127.0.0.1:8000/ to access the website features
+
