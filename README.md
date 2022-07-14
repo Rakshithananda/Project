@@ -44,7 +44,6 @@ Project is created with:
       * To install Django Rest Framework, open Terminal/Command prompt and run the following command
       ```
       pip install djangorestframework==3.12.4
-      
       ```
       * To install Crispy Forms, open Terminal/Command prompt and run the following command
       ```
