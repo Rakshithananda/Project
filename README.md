@@ -15,7 +15,7 @@ The goal of this project is to create a A.P Registration and Stamp Department Se
 2. Created Login, User Authentication and Signup Features
 3. Forms to add data into Databases
 
-## --------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------------
 
 ## Table of contents
 * [General info](#general-info)
