@@ -1,8 +1,10 @@
 import imp
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import UserRegisterForm,RevenueDistrictForm,RevenueMandalForm,RevenueVillageForm
-from .models import Revenue_District,Revenue_Mandal,Revenue_Village
+from .forms import UserRegisterForm,RevenueDistrictForm,RevenueMandalForm
+#RevenueVillageForm
+from .models import Revenue_District,Revenue_Mandal
+#Revenue_Village
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -107,40 +109,40 @@ def Delete_Revenue_Mandal(request, id):
 #-------------------------------------------------------------------------------------
 # Revenue Village Table Contents
 
-@login_required
-def Add_Revenue_Village(request):
-    if request.method == 'POST':
-        form = RevenueVillageForm(request.POST)
-        if form.is_valid():
-            print(form)
-            form.save()
-            messages.success(request, f'Your Data is Succesfully added!')
-            return redirect('show-revenue-village')
-    else:
-        form = RevenueVillageForm()
-    return render(request,'home/add_table.html',{'form':form})
+# @login_required
+# def Add_Revenue_Village(request):
+#     if request.method == 'POST':
+#         form = RevenueVillageForm(request.POST)
+#         if form.is_valid():
+#             print(form)
+#             form.save()
+#             messages.success(request, f'Your Data is Succesfully added!')
+#             return redirect('show-revenue-village')
+#     else:
+#         form = RevenueVillageForm()
+#     return render(request,'home/add_table.html',{'form':form})
 
-@login_required
-def Show_Revenue_Village(request):
-    villages = Revenue_Village.objects.all()
-    return render(request,'home/show_revenue_village.html',{'villages':villages})
+# @login_required
+# def Show_Revenue_Village(request):
+#     villages = Revenue_Village.objects.all()
+#     return render(request,'home/show_revenue_village.html',{'villages':villages})
 
-@login_required
-def Update_Revenue_Village(request,id):
-    village = Revenue_Village.objects.get(id = id)
-    if request.method == 'POST':
-        form = RevenueVillageForm(request.POST, instance = village)
-        if form.is_valid():     
-            form.save()
-            messages.success(request, f'Data Updated Succesfully !')  
-            return redirect('show-revenue-village')
-    else:
-        form = RevenueVillageForm(instance = village)
-    return render(request, 'home/edit_table.html', {'form':form})
+# @login_required
+# def Update_Revenue_Village(request,id):
+#     village = Revenue_Village.objects.get(id = id)
+#     if request.method == 'POST':
+#         form = RevenueVillageForm(request.POST, instance = village)
+#         if form.is_valid():     
+#             form.save()
+#             messages.success(request, f'Data Updated Succesfully !')  
+#             return redirect('show-revenue-village')
+#     else:
+#         form = RevenueVillageForm(instance = village)
+#     return render(request, 'home/edit_table.html', {'form':form})
 
-@login_required
-def Delete_Revenue_Village(request, id):  
-    village = Revenue_Village.objects.get(id = id)  
-    village.delete()  
-    return redirect('show-revenue-village')
+# @login_required
+# def Delete_Revenue_Village(request, id):  
+#     village = Revenue_Village.objects.get(id = id)  
+#     village.delete()  
+#     return redirect('show-revenue-village')
 

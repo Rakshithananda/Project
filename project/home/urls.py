@@ -23,8 +23,8 @@ urlpatterns = [
     path('delete_revenue_mandal/<int:id>', views.Delete_Revenue_Mandal),
 
     # Revenue Village
-    path('show_revenue_village/',views.Show_Revenue_Village,name = 'show-revenue-village'),
-    path('add_revenue_village/',views.Add_Revenue_Village,name = 'add-revenue-village'),
-    path('update_revenue_village/<int:id>', views.Update_Revenue_Village),  
-    path('delete_revenue_village/<int:id>', views.Delete_Revenue_Village),
+    # path('show_revenue_village/',views.Show_Revenue_Village,name = 'show-revenue-village'),
+    # path('add_revenue_village/',views.Add_Revenue_Village,name = 'add-revenue-village'),
+    # path('update_revenue_village/<int:id>', views.Update_Revenue_Village),  
+    # path('delete_revenue_village/<int:id>', views.Delete_Revenue_Village),
 ]

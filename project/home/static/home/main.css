@@ -125,7 +125,7 @@
   border-radius: var(--dl-radius-radius-radius4);
   flex-direction: column;
   background-size: cover;
-  background-image: url('https://www.telugubulletin.com/wp-content/uploads/2019/11/ap-map.png');
+  background-image: url('/static/home/background.png');
   background-position: 10px 10px 50px 10px;
 
 }
@@ -167,7 +167,7 @@
   position: absolute;
   border: 3px solid #555;
   font-size: 12px;
-  background-image: url('https://cutewallpaper.org/21/login-background/Login-ARLO-Group-Benefits.jpg') !important;
+  background-image: url('/static/home/login.jpg') !important;
 }
 .home-register-form {
   padding: 10px;
@@ -178,7 +178,7 @@
   position: absolute;
   border: 3px solid #555;
   background-color: #dac8c8;
-  background-image: url('https://cutewallpaper.org/21/login-background/Login-ARLO-Group-Benefits.jpg') !important;
+  background-image: url('/static/home/register.jpg') !important;
 }   
 .text-muted {
   color: #333333 !important;
