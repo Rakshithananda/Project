@@ -33,5 +33,5 @@ class Revenue_Mandal(models.Model):
 #        return self.village_name
 
 
-
+    
 
