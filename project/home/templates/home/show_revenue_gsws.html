@@ -6,23 +6,27 @@
           <thead class="thead-dark">
             <tr>
               <th>District Code</th>
+              <th>Village Code</th>
               <th>Mandal Code</th>
-              <th>Mandal ID</th>
-              <th>Mandal Name</th>
+              <th>GSWS Code</th>
+              <th>GSWS ID</th>
+              <th>GSWS Name</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody> 
-            {% for mandal in mandals %} <tr>
-              <td>{{ mandal.district_code }}</td>
-              <td>{{ mandal.mandal_code }}</td>
-              <td>{{ mandal.mandal_id }}</td>
-              <td>{{ mandal.mandal_name }}</td>
+            {% for gsws in gswss %} <tr>
+              <td>{{ gsws.district_code }}</td>
+              <td>{{ gsws.mandal_code }}</td>
+              <td>{{ gsws.village_code }}</td>
+              <td>{{ gsws.gsws_code }}</td>
+              <td>{{ gsws.gsws_id }}</td>
+              <td>{{ gsws.gsws_name }}</td>
               <td>
-                <a href="/update_revenue_mandal/{{ mandal.mandal_id }}">
+                <a href="/update_revenue_gsws/{{ gsws.gsws_id }}">
                   <span class="glyphicon glyphicon-pencil">Edit</span>
                 </a>
-                <a href="/delete_revenue_mandal/{{ mandal.mandal_id }}">Delete</a>
+                <a href="/delete_revenue_gsws/{{ gsws.gsws_id }}">Delete</a>
               </td>
             </tr> 
             {% endfor %} 
@@ -31,7 +35,7 @@
       <br>
       <br>
       <div class = "button-center">
-        <a href="/add_revenue_mandal/" class="btn btn-primary">Add New Record</a>
+        <a href="/add_revenue_gsws/" class="btn btn-primary">Add New Record</a>
       </div>
   </div>
 {% endblock content %}

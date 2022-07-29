@@ -6,7 +6,7 @@
           <thead class="thead-dark">
             <tr>
               <th>District Code</th>
-              <th>Mandal Code</th>
+              <th>SRO Code</th>
               <th>Village Code</th>
               <th>Village ID</th>
               <th>Village Name</th>
@@ -16,15 +16,15 @@
           <tbody> 
             {% for village in villages %} <tr>
               <td>{{ village.district_code }}</td>
-              <td>{{ village.mandal_code }}</td>
+              <td>{{ village.sro_code }}</td>
               <td>{{ village.village_code }}</td>
               <td>{{ village.village_id }}</td>
               <td>{{ village.village_name }}</td>
               <td>
-                <a href="/update_revenue_village/{{ village.village_id }}">
+                <a href="/update_register_village/{{ village.village_id }}">
                   <span class="glyphicon glyphicon-pencil">Edit</span>
                 </a>
-                <a href="/delete_revenue_village/{{ village.village_id }}">Delete</a>
+                <a href="/delete_register_village/{{ village.village_id }}">Delete</a>
               </td>
             </tr> 
             {% endfor %} 
@@ -33,7 +33,7 @@
       <br>
       <br>
       <div class = "button-center">
-        <a href="/add_revenue_village/" class="btn btn-primary">Add New Record</a>
+        <a href="/add_register_village/" class="btn btn-primary">Add New Record</a>
       </div>
   </div>
 {% endblock content %}

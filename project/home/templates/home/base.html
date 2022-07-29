@@ -18,10 +18,12 @@
     <div class="nav-container">
       <a class="navbar-brand mr-4" href="{% url 'home' %}">AP Registration and Stamp Dept.</a>
     </div>
-    <div class = "login-logout">
+    <div class = "navbar-options">
       {% if user.is_authenticated %}
+        <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
         <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
       {% else %}
+        <a class="nav-item nav-link" href="{% url 'home' %}">Login</a>
         <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
       {% endif %}
     </div>

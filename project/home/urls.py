@@ -11,10 +11,10 @@ urlpatterns = [
     path('register/',views.register,name = 'register'),
 
     # Revenue District
-    path('show_revenue_dist/',views.Show_Revenue_Dist,name = 'show-revenue-dist'),
-    path('add_revenue_dist/',views.Add_Revenue_Dist,name = 'add-revenue-dist'),
-    path('update_revenue_dist/<int:id>', views.Update_Revenue_Dist),  
-    path('delete_revenue_dist/<int:id>', views.Delete_Revenue_Dist),
+    path('show_revenue_district/',views.Show_Revenue_District,name = 'show-revenue-district'),
+    path('add_revenue_district/',views.Add_Revenue_District,name = 'add-revenue-district'),
+    path('update_revenue_district/<int:id>', views.Update_Revenue_District),  
+    path('delete_revenue_district/<int:id>', views.Delete_Revenue_District),
 
     # Revenue Mandal
     path('show_revenue_mandal/',views.Show_Revenue_Mandal,name = 'show-revenue-mandal'),
@@ -23,8 +23,41 @@ urlpatterns = [
     path('delete_revenue_mandal/<int:id>', views.Delete_Revenue_Mandal),
 
     # Revenue Village
-    # path('show_revenue_village/',views.Show_Revenue_Village,name = 'show-revenue-village'),
-    # path('add_revenue_village/',views.Add_Revenue_Village,name = 'add-revenue-village'),
-    # path('update_revenue_village/<int:id>', views.Update_Revenue_Village),  
-    # path('delete_revenue_village/<int:id>', views.Delete_Revenue_Village),
+    path('show_revenue_village/',views.Show_Revenue_Village,name = 'show-revenue-village'),
+    path('add_revenue_village/',views.Add_Revenue_Village,name = 'add-revenue-village'),
+    path('update_revenue_village/<int:id>', views.Update_Revenue_Village),  
+    path('delete_revenue_village/<int:id>', views.Delete_Revenue_Village),
+
+    # Revenue GSWS
+    path('show_revenue_gsws/',views.Show_Revenue_GSWS,name = 'show-revenue-gsws'),
+    path('add_revenue_gsws/',views.Add_Revenue_GSWS,name = 'add-revenue-gsws'),
+    path('update_revenue_gsws/<int:id>', views.Update_Revenue_GSWS),  
+    path('delete_revenue_gsws/<int:id>', views.Delete_Revenue_GSWS),
+
+    # Revenue VRO
+    path('show_revenue_vro/',views.Show_Revenue_VRO,name = 'show-revenue-vro'),
+    path('add_revenue_vro/',views.Add_Revenue_VRO,name = 'add-revenue-vro'),
+    path('update_revenue_vro/<int:id>', views.Update_Revenue_VRO),  
+    path('delete_revenue_vro/<int:id>', views.Delete_Revenue_VRO),
+
+
+
+
+    # Register District
+    path('show_register_district/',views.Show_Register_District,name = 'show-register-district'),
+    path('add_register_district/',views.Add_Register_District,name = 'add-register-district'),
+    path('update_register_district/<int:id>', views.Update_Register_District),  
+    path('delete_register_district/<int:id>', views.Delete_Register_District),
+
+    # Register SRO
+    path('show_register_sro/',views.Show_Register_SRO,name = 'show-register-sro'),
+    path('add_register_sro/',views.Add_Register_SRO,name = 'add-register-sro'),
+    path('update_register_sro/<int:id>', views.Update_Register_SRO),  
+    path('delete_register_sro/<int:id>', views.Delete_Register_SRO),
+
+    # Register Village
+    path('show_register_village/',views.Show_Register_Village,name = 'show-register-village'),
+    path('add_register_village/',views.Add_Register_Village,name = 'add-register-village'),
+    path('update_register_village/<int:id>', views.Update_Register_Village),  
+    path('delete_register_village/<int:id>', views.Delete_Register_Village),
 ]

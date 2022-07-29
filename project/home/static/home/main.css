@@ -1,6 +1,16 @@
 .error {
   margin: 20px;
 }
+
+.navbar {
+  display:flex;
+  justify-content: space-between;
+}
+
+.navbar-options {
+  display: flex;
+}
+
 .message {
   position: absolute;
 }
@@ -13,9 +23,9 @@
 }
 
 .form-container {
-  margin: auto;
+  margin: 30px auto 30px;
   border: 3px solid #555;
-  padding: 40px;
+  padding: 50px;
 }
 
 .form-heading {
@@ -167,7 +177,7 @@
   position: absolute;
   border: 3px solid #555;
   font-size: 12px;
-  background-image: url('/static/home/login.jpg') !important;
+  backdrop-filter: blur(10px);
 }
 .home-register-form {
   padding: 10px;
@@ -177,8 +187,7 @@
   height: 640px;
   position: absolute;
   border: 3px solid #555;
-  background-color: #dac8c8;
-  background-image: url('/static/home/register.jpg') !important;
+  backdrop-filter: blur(10px);
 }   
 .text-muted {
   color: #333333 !important;
@@ -354,13 +363,5 @@
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
-}
-.login-logout {
-  right: 10px;
-  width: 100px;
-  margin: 2px;
-  position: absolute;
-  align-self: flex-end;
-  object-fit: cover;
 }
 
