@@ -1,0 +1,69 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+  <div class = "home-mainbody center1">
+    <div class="table-container">
+      <table class="table table-striped table-bordered table-sm">
+          <thead class="thead-dark">
+            <tr>
+              <th>Claiment ID</th>
+              <th>GSWS ID</th>
+              <th>District Code</th>
+              <th>Mandal Code</th>
+              <th>Village Code</th>
+              <th>GSWS Code</th>
+              <th>Title</th>
+              <th>Claiment Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Aadhar No.</th>
+              <th>Relation To</th>
+              <th>Relation Name</th>
+              <th>Village ID</th>
+              <th>Street</th>
+              <th>Door No.</th>
+              <th>Pincode</th>
+              <th>Phone No.</th>
+              <th>Entry Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody> 
+            {% for claiment in claiments %} <tr>
+              <td>{{ claiment.claiment_id }}</td>
+              <td>{{ claiment.gsws_id }}</td>
+              <td>{{ claiment.district_code }}</td>
+              <td>{{ claiment.mandal_code }}</td>
+              <td>{{ claiment.village_code }}</td>
+              <td>{{ claiment.gsws_code }}</td>
+              <td>{{ claiment.title }}</td>
+              <td>{{ claiment.claiment_name }}</td>
+              <td>{{ claiment.age }}</td>
+              <td>{{ claiment.gender }}</td>
+              <td>{{ claiment.aadhar }}</td>
+              <td>{{ claiment.relation_of }}</td>
+              <td>{{ claiment.relation_name }}</td>
+              <td>{{ claiment.village_id }}</td>
+              <td>{{ claiment.street }}</td>
+              <td>{{ claiment.door_no }}</td>
+              <td>{{ claiment.pincode }}</td>
+              <td>{{ claiment.phone_no }}</td>
+              <td>{{ claiment.entry_date }}</td>
+              <td>
+                <a href="/update_revenue_claiment/{{ claiment.claiment_id }}">
+                  <span class="glyphicon glyphicon-pencil">Edit</span>
+                </a>
+                <a href="/delete_revenue_claiment/{{ claiment.claiment_id }}">Delete</a>
+              </td>
+            </tr> 
+            {% endfor %} 
+          </tbody>
+      </table>
+    </div>
+      <br>
+      <br>
+      <div class = "button-center">
+        <a href="/add_revenue_claiment/" class="btn btn-primary">Add New Record</a>
+      </div>
+  </div>
+{% endblock content %}

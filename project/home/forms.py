@@ -11,7 +11,7 @@ from .models import ( Revenue_District,
                     Revenue_VRO,
                     Revenue_VRO_Details,
                     Revenue_Claiment,
-                    Shedule_Entry,
+                    Schedule_Entry,
                     Register_District,
                     Register_SRO,
                     Register_Village)
@@ -53,19 +53,68 @@ class RevenueVRODetailsForm(ModelForm):
 
     class Meta:
         model = Revenue_VRO_Details
-        fields = '__all__'
+        fields = ['district_code',
+                    'mandal_code',
+                    'vro_code',
+                    'vro_id',
+                    'vro_name',
+                    'age',
+                    'gender',
+                    'aadhar',
+                    'relation_of',
+                    'relation_name',
+                    'street',
+                    'village_name',
+                    'door_no',
+                    'pincode',
+                    'phone_no']
 
 class RevenueClaimentForm(ModelForm):
 
     class Meta:
         model = Revenue_Claiment
-        fields = '__all__'
+        fields = ['claiment_id',
+                    'gsws_id',
+                    'district_code',
+                    'mandal_code',
+                    'village_code',
+                    'gsws_code',
+                    'title',
+                    'claiment_name',
+                    'age',
+                    'gender',
+                    'aadhar',
+                    'relation_of',
+                    'relation_name',
+                    'village_id',
+                    'street',
+                    'door_no',
+                    'pincode',
+                    'phone_no',]
 
-class SheduleEntryForm(ModelForm):
+class ScheduleEntryForm(ModelForm):
 
     class Meta:
-        model = Shedule_Entry
-        fields = '__all__'
+        model = Schedule_Entry
+        fields = ['claiment_id',
+                    'gsws_id',
+                    'village_id',
+                    'district_code',
+                    'mandal_code',
+                    'village_code',
+                    'gsws_code',
+                    'old_house_no',
+                    'nature_use',
+                    'plot_no',
+                    'schedule_no',
+                    'jurisdicition',
+                    'ward_no',
+                    'block_no',
+                    'survey_no',
+                    'east_eng',
+                    'west_eng',
+                    'north_eng',
+                    'south_eng']
 
 # Register Forms
 class RegisterDistrictForm(ModelForm):

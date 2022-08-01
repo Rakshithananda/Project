@@ -4,20 +4,58 @@
 {% block content %}
   {% if user.is_authenticated %}
   <div class = "home-mainbody">
-    <div class="loggedin  ">
-      <h1> Hi there! {{user.first_name}}, You are logged In! </h1>
+    <div class="loggedin">
+      <h3> Welcome! {{user.first_name}} {{ user.last_name }}</h3>
+      <div id="box">
+        <div class="dot"></div>
+        <a href="{% url 'show-revenue-district' %}" class="icon center center1"><img src={% static 'home/revenue_district.png' %}>
+        <p>Revenue District</p>
+        </a>
+        <a href="{% url 'show-revenue-mandal' %}" class="icon center center1" ><img src={% static 'home/revenue_mandal.png' %}>
+        <p>Revenue Mandal</p>
+        </a>
+        <a href="{% url 'show-revenue-village' %}" class="icon center center1" ><img src={% static 'home/revenue_village.png' %}>
+        <p>Revenue Village</p>
+        </a>
+        <a href="{% url 'show-revenue-gsws' %}" class="icon center center1" ><img src={% static 'home/revenue_gsws.png' %}>
+        <p>Revenue GSWS</p>
+        </a>
+        <a href="{% url 'show-revenue-vro' %}" class="icon center center1" ><img src={% static 'home/revenue_vro.png' %}>
+        <p>Revenue VRO</p>
+        </a>
+        <a href="{% url 'show-revenue-vro-details' %}" class="icon center center1" ><img hre src={% static 'home/revenue_vro_details.png' %}>
+        <p>Revenue VRO Details</p>
+        </a>
+        <a href="{% url 'show-revenue-claiment' %}" class="icon center center1" ><img src={% static 'home/revenue_claiment.png' %}>
+        <p>Revenue Claiment</p>
+        </a>
+        <a href="{% url 'show-schedule-entry' %}" class="icon center center1" ><img src={% static 'home/schedule_entry.png' %}>
+        <p>Schedule Entry</p>
+        </a>
+        <a href="{% url 'show-register-district' %}" class="icon center center1" ><img src={% static 'home/register_district.png' %}>
+        <p>Register District</p>
+        </a>
+        <a href="{% url 'show-register-sro' %}" class="icon center center1" ><img src={% static 'home/register_sro.png' %}>
+        <p>Register SRO</p>
+        </a>
+        <a href="{% url 'show-register-village' %}" class="icon center center1" ><img src={% static 'home/register_village.png' %}>
+        <p>Register Village</p>
+        </a>
+      </div>
     </div>
   </div>
   {% else %}
-    <div class="home-mainbody" >
-      <img
-        alt="image"
-        src={% static 'home/bg_home.jpg' %}
-        class="home-image3"
-      />
-      <div class="home-login">
-          <div class="home-login-form">
-            <form method="POST">
+    <div class="home-mainbody center center2" >
+      <div class="main-image center">
+        <img
+          alt="image"
+          src={% static 'home/bg_home.jpg' %}
+          class="home-image3"
+        />
+      </div>
+      <div class="home-login center">
+          <div class="home-login-form center">
+            <form class="center center1" method="POST">
                 {% csrf_token %}
                 <fieldset class="form-group">
                     <legend class="login-button">Log In</legend>
@@ -35,6 +73,7 @@
         </div>
       </div>
     </div>
+
   {% endif %}
 {% endblock content %}
 

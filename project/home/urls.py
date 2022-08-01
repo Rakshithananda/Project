@@ -40,9 +40,27 @@ urlpatterns = [
     path('update_revenue_vro/<int:id>', views.Update_Revenue_VRO),  
     path('delete_revenue_vro/<int:id>', views.Delete_Revenue_VRO),
 
+    # Revenue VRO Details
+    path('show_revenue_vro_details/',views.Show_Revenue_VRO_Details,name = 'show-revenue-vro-details'),
+    path('add_revenue_vro_details/',views.Add_Revenue_VRO_Details,name = 'add-revenue-vro-details'),
+    path('update_revenue_vro_details/<int:id>', views.Update_Revenue_VRO_Details),  
+    path('delete_revenue_vro_details/<int:id>', views.Delete_Revenue_VRO_Details),
 
+    # Revenue Claiment
+    path('show_revenue_claiment/',views.Show_Revenue_Claiment,name = 'show-revenue-claiment'),
+    path('add_revenue_claiment/',views.Add_Revenue_Claiment,name = 'add-revenue-claiment'),
+    path('update_revenue_claiment/<int:id>', views.Update_Revenue_Claiment),  
+    path('delete_revenue_claiment/<int:id>', views.Delete_Revenue_Claiment),
 
-
+    # Schedule Entry
+    path('show_schedule_entry/',views.Show_Schedule_Entry,name = 'show-schedule-entry'),
+    path('add_schedule_entry/',views.Add_Schedule_Entry,name = 'add-schedule-entry'),
+    path('update_schedule_entry/<int:id>', views.Update_Schedule_Entry),  
+    path('delete_schedule_entry/<int:id>', views.Delete_Schedule_Entry),
+    
+    
+    
+    #----------------------------------------------------------------------------------------------
     # Register District
     path('show_register_district/',views.Show_Register_District,name = 'show-register-district'),
     path('add_register_district/',views.Add_Register_District,name = 'add-register-district'),

@@ -6,17 +6,23 @@ from .forms import (UserRegisterForm,
                     RevenueVillageForm,
                     RevenueGSWSForm,
                     RevenueVROForm,
+                    RevenueVRODetailsForm,
                     RegisterDistrictForm,
                     RegisterSROForm,
-                    RegisterVillageForm)
+                    RegisterVillageForm,
+                    RevenueClaimentForm,
+                    ScheduleEntryForm)
 from .models import (Revenue_District,
                     Revenue_Mandal, Revenue_VRO,
                     Revenue_Village,
                     Revenue_GSWS,
                     Revenue_VRO,
+                    Revenue_VRO_Details,
                     Register_District,
                     Register_SRO,
-                    Register_Village)
+                    Register_Village,
+                    Revenue_Claiment,
+                    Schedule_Entry)
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -80,7 +86,6 @@ def Add_Revenue_Mandal(request):
     if request.method == 'POST':
         form = RevenueMandalForm(request.POST)
         if form.is_valid():
-            print(form)
             form.save()
             messages.success(request, f'Your Data is Succesfully added!')
             return redirect('show-revenue-mandal')
@@ -120,7 +125,6 @@ def Add_Revenue_Village(request):
     if request.method == 'POST':
         form = RevenueVillageForm(request.POST)
         if form.is_valid():
-            print(form)
             form.save()
             messages.success(request, f'Your Data is Succesfully added!')
             return redirect('show-revenue-village')
@@ -160,7 +164,6 @@ def Add_Revenue_GSWS(request):
     if request.method == 'POST':
         form = RevenueGSWSForm(request.POST)
         if form.is_valid():
-            print(form)
             form.save()
             messages.success(request, f'Your Data is Succesfully added!')
             return redirect('show-revenue-gsws')
@@ -201,7 +204,6 @@ def Add_Revenue_VRO(request):
     if request.method == 'POST':
         form = RevenueVROForm(request.POST)
         if form.is_valid():
-            print(form)
             form.save()
             messages.success(request, f'Your Data is Succesfully added!')
             return redirect('show-revenue-vro')
@@ -234,23 +236,123 @@ def Delete_Revenue_VRO(request, id):
     return redirect('show-revenue-vro')
 
 
+# Revenue VRO Details Table Contents
+@login_required
+def Add_Revenue_VRO_Details(request):
+    if request.method == 'POST':
+        form = RevenueVRODetailsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Your Data is Succesfully added!')
+            return redirect('show-revenue-vro-details')
+    else:
+        form = RevenueVRODetailsForm()
+    return render(request,'home/add_table.html',{'form':form})
+
+@login_required
+def Show_Revenue_VRO_Details(request):
+    vro_details = Revenue_VRO_Details.objects.all()
+    return render(request,'home/show_revenue_vro_details.html',{'vro_details':vro_details})
+
+@login_required
+def Update_Revenue_VRO_Details(request,id):
+    vro_details = Revenue_VRO_Details.objects.get(vro_id = id)
+    if request.method == 'POST':
+        form = RevenueVRODetailsForm(request.POST, instance = vro_details)
+        if form.is_valid():     
+            form.save()
+            messages.success(request, f'Data Updated Succesfully !')  
+            return redirect('show-revenue-vro-details')
+    else:
+        form = RevenueVRODetailsForm(instance = vro_details)
+    return render(request, 'home/edit_table.html', {'form':form})
+
+@login_required
+def Delete_Revenue_VRO_Details(request, id):  
+    vro_details = Revenue_VRO_Details.objects.get(vro_id = id)  
+    vro_details.delete()  
+    return redirect('show-revenue-vro-details')
 
 
+#-------------------------------------------------------------------------------------
+# Revenue Claiment Table Contents
+@login_required
+def Add_Revenue_Claiment(request):
+    if request.method == 'POST':
+        form = RevenueClaimentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Your Data is Succesfully added!')
+            return redirect('show-revenue-claiment')
+    else:
+        form = RevenueClaimentForm()
+    return render(request,'home/add_table.html',{'form':form})
+
+@login_required
+def Show_Revenue_Claiment(request):
+    claiments = Revenue_Claiment.objects.all()
+    return render(request,'home/show_revenue_claiment.html',{'claiments':claiments})
+
+@login_required
+def Update_Revenue_Claiment(request,id):
+    claiment = Revenue_Claiment.objects.get(claiment_id = id)
+    if request.method == 'POST':
+        form = RevenueClaimentForm(request.POST, instance = claiment)
+        if form.is_valid():     
+            form.save()
+            messages.success(request, f'Data Updated Succesfully !')  
+            return redirect('show-revenue-claiment')
+    else:
+        form = RevenueClaimentForm(instance = claiment)
+    return render(request, 'home/edit_table.html', {'form':form})
+
+@login_required
+def Delete_Revenue_Claiment(request, id):  
+    claiment = Revenue_Claiment.objects.get(claiment_id = id)  
+    claiment.delete()  
+    return redirect('show-revenue-claiment')
 
 
+#-------------------------------------------------------------------------------------
+# Schedule Entry Table Contents
+@login_required
+def Add_Schedule_Entry(request):
+    if request.method == 'POST':
+        form = ScheduleEntryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Your Data is Succesfully added!')
+            return redirect('show-schedule-entry')
+    else:
+        form = ScheduleEntryForm()
+    return render(request,'home/add_table.html',{'form':form})
+
+@login_required
+def Show_Schedule_Entry(request):
+    schedules = Schedule_Entry.objects.all()
+    return render(request,'home/show_schedule_entry.html',{'schedules':schedules})
+
+@login_required
+def Update_Schedule_Entry(request,id):
+    schedule = Schedule_Entry.objects.get(claiment_id = id)
+    if request.method == 'POST':
+        form = ScheduleEntryForm(request.POST, instance = schedule)
+        if form.is_valid():     
+            form.save()
+            messages.success(request, f'Data Updated Succesfully !')  
+            return redirect('show-schedule-entry')
+    else:
+        form = ScheduleEntryForm(instance = schedule)
+    return render(request, 'home/edit_table.html', {'form':form})
+
+@login_required
+def Delete_Schedule_Entry(request, id):  
+    schedule = Schedule_Entry.objects.get(claiment_id = id)  
+    schedule.delete()  
+    return redirect('show-schedule-entry')
 
 
-
-
-
-
-
-
-
-
-
-
-
+#-------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------
 # Register District Table Contents
 @login_required
@@ -258,7 +360,6 @@ def Add_Register_District(request):
     if request.method == 'POST':
         form = RegisterDistrictForm(request.POST)
         if form.is_valid():
-            print(form)
             form.save()
             messages.success(request, f'Your Data is Succesfully added!')
             return redirect('show-register-district')
@@ -297,7 +398,6 @@ def Add_Register_SRO(request):
     if request.method == 'POST':
         form = RegisterSROForm(request.POST)
         if form.is_valid():
-            print(form)
             form.save()
             messages.success(request, f'Your Data is Succesfully added!')
             return redirect('show-register-sro')
@@ -336,7 +436,6 @@ def Add_Register_Village(request):
     if request.method == 'POST':
         form = RegisterVillageForm(request.POST)
         if form.is_valid():
-            print(form)
             form.save()
             messages.success(request, f'Your Data is Succesfully added!')
             return redirect('show-register-village')

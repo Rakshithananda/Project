@@ -1,0 +1,63 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+  <div class = "home-mainbody center1">
+    <div class="table-container">
+      <table class="table table-striped table-bordered table-sm">
+          <thead class="thead-dark">
+            <tr>
+              <th>District Code</th>
+              <th>Mandal Code</th>
+              <th>VRO code</th>
+              <th>VRO ID</th>
+              <th>VRO Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Aadhar No.</th>
+              <th>Relation To</th>
+              <th>Relation Name</th>
+              <th>Street</th>
+              <th>Village Name</th>
+              <th>Door No.</th>
+              <th>Pincode</th>
+              <th>Phone No.</th>
+              <th>Entry Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody> 
+            {% for vro_detail in vro_details %} <tr>
+              <td>{{ vro_detail.district_code }}</td>
+              <td>{{ vro_detail.mandal_code }}</td>
+              <td>{{ vro_detail.vro_code }}</td>
+              <td>{{ vro_detail.vro_id }}</td>
+              <td>{{ vro_detail.vro_name }}</td>
+              <td>{{ vro_detail.age }}</td>
+              <td>{{ vro_detail.gender }}</td>
+              <td>{{ vro_detail.aadhar }}</td>
+              <td>{{ vro_detail.relation_of }}</td>
+              <td>{{ vro_detail.relation_name }}</td>
+              <td>{{ vro_detail.street }}</td>
+              <td>{{ vro_detail.village_name}}</td>
+              <td>{{ vro_detail.door_no }}</td>
+              <td>{{ vro_detail.pincode }}</td>
+              <td>{{ vro_detail.phone_no }}</td>
+              <td>{{ vro_detail.entry_date }}</td>
+              <td>
+                <a href="/update_revenue_vro_details/{{ vro_detail.vro_id }}">
+                  <span class="glyphicon glyphicon-pencil">Edit</span>
+                </a>
+                <a href="/delete_revenue_vro_details/{{ vro_detail.vro_id }}">Delete</a>
+              </td>
+            </tr> 
+            {% endfor %} 
+          </tbody>
+      </table>
+    </div>
+      <br>
+      <br>
+      <div class = "button-center">
+        <a href="/add_revenue_vro_details/" class="btn btn-primary">Add New Record</a>
+      </div>
+  </div>
+{% endblock content %}

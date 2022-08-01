@@ -43,7 +43,7 @@ class Revenue_VRO_Details(models.Model):
     mandal_code = models.CharField("Mandal Code",max_length=30)
     vro_code = models.CharField("VRO code",max_length=30)
     vro_id = models.IntegerField("VRO ID",primary_key=True)
-    VRO_name = models.CharField("VRO Name", max_length=30)
+    vro_name = models.CharField("VRO Name", max_length=30)
     age = models.IntegerField("Age")
     gender = models.CharField("Gender",max_length=30)
     aadhar = models.CharField("Aadhar No.",max_length=16)
@@ -75,7 +75,7 @@ class Revenue_Claiment(models.Model):
     pincode = models.CharField("Pincode", max_length=6)
     phone_no = models.CharField("Phone No.", max_length=15)
     entry_date = models.DateTimeField(auto_now_add=True)
-class Shedule_Entry(models.Model):
+class Schedule_Entry(models.Model):
     claiment_id = models.IntegerField("Claiment ID",primary_key=True)
     gsws_id = models.IntegerField("GSWS ID")
     village_id = models.IntegerField("Village ID")
@@ -83,7 +83,7 @@ class Shedule_Entry(models.Model):
     mandal_code = models.CharField("Mandal Code",max_length=30)
     village_code = models.CharField("Village Code",max_length=30)
     gsws_code = models.CharField("GSWS Code",max_length=30)
-    old_house_no = models.CharField("Phone No.", max_length=30) 
+    old_house_no = models.CharField("Old House No.", max_length=30) 
     nature_use = models.IntegerField("Nature Use")
     plot_no =  models.IntegerField("Plot No.")
     schedule_no = models.IntegerField("Schedule No.")
